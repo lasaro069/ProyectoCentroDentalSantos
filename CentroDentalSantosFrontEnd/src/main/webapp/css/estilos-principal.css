@@ -1,0 +1,136 @@
+
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body{
+	background: url(../images/img/dentalabtrans.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+header{
+	width: 100%;
+	height: 150px;
+    background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
+/*	background: rgb(233, 230, 224);*/
+}
+
+#logo{
+	width: auto;
+	float: left;
+	margin-top: 10px;
+}
+
+#titulo{
+	float: left;
+	width: 160px;
+	margin-top: 10px;
+}
+
+h1{
+	font-size: 36px;
+	color: darkred;
+}
+
+
+.menu{
+	width: 1100px;
+	height: auto; overflow: hidden;
+	float: right;
+	margin-top: 100px;
+}
+
+.menu ul{
+	width: 1100px;
+	float: right;
+	height: auto; overflow: hidden;
+}
+
+.menu ul li{
+	height: auto; overflow: hidden;
+	list-style: none;
+	float: left;
+	margin-top: 5px;
+	padding: 1px 10px;
+}
+
+.menu ul li a{
+	height: auto; overflow: hidden;
+	text-decoration: none;
+	padding: 3px 10px;
+	color: white;
+	background: rgb(15, 26, 85);
+	border-radius: 4px;
+}
+
+.menu ul li a:hover{
+	background: turquoise;
+}
+
+
+#trabajos{
+	width: auto;
+	height: 420px; overflow: hidden;
+	margin-top: 10px;
+	background: cornflowerblue;
+
+}
+
+.reparaciones{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	width: 290px;
+	height: 400px;
+	float: left;
+}
+
+.totales{
+	margin-right: 10px;
+	margin-top: 100px;
+	width: 290px;
+	height: 400px;
+	float: left;
+}
+
+.parciales{
+	margin-right: 10px;
+	margin-top: 10px;
+	width: 290px;
+	height: 400px;
+	float: left;
+}
+
+.vitallium{
+	margin-top: 100px;
+	width: 290px;
+	height: 400px;
+	float: left;
+}
+
+.garantizado{
+	margin-right: 10px;
+	margin-top: 10px;
+	width: 290px;
+	height: 400px;
+	float: right;
+}
+
+h2{
+	text-align: center;
+	padding: 5px 5px;
+}
+
+p{
+	margin-top: 10px;
+}
+
+footer{
+    height: 20px;
+    margin-top: 50px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+}
