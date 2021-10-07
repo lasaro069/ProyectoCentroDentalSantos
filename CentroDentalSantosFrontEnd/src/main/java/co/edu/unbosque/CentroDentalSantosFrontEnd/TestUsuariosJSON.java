@@ -20,6 +20,7 @@ public class TestUsuariosJSON {
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
 	
+	
 	public static ArrayList<Usuarios> parsingUsuarios(String json) throws ParseException {
 		JSONParser jsonParser = new JSONParser();
 		ArrayList<Usuarios> lista = new ArrayList<Usuarios>();
@@ -31,14 +32,15 @@ public class TestUsuariosJSON {
 			JSONObject innerObj = (JSONObject) i.next();
 			Usuarios usuario = new Usuarios();
 			usuario.setCedula_usuario(innerObj.get("cedula_usuario").toString());
-			usuario.setEmail_usuario(innerObj.get("email_usuario").toString());
 			usuario.setNombre_usuario(innerObj.get("nombre_usuario").toString());
-			usuario.setPassword(innerObj.get("password").toString());
+			usuario.setEmail_usuario(innerObj.get("email_usuario").toString());
 			usuario.setUsuario(innerObj.get("usuario").toString());
+			usuario.setPassword(innerObj.get("password").toString());
 			lista.add(usuario);
 		}
 		return lista;
 	}
+
 	
 	public static ArrayList<Usuarios> getJSON() throws IOException, ParseException{
 		
@@ -62,9 +64,10 @@ public class TestUsuariosJSON {
 		return lista;
 	}
 
+
 	public static int postJSON(Usuarios usuario) throws IOException {
-	
-	
+		
+		
 		url = new URL(sitio+"usuarios/guardar");
 		HttpURLConnection http;
 		http = (HttpURLConnection)url.openConnection();
@@ -81,11 +84,10 @@ public class TestUsuariosJSON {
 		
 		String data = "{"
 				+ "\"cedula_usuario\":\""+ usuario.getCedula_usuario()
-				+"\",\"email_usuario\": \""+usuario.getEmail_usuario()
 				+"\",\"nombre_usuario\": \""+usuario.getNombre_usuario()
-				+"\",\"password\":\""+usuario.getPassword()
+				+"\",\"email_usuario\": \""+usuario.getEmail_usuario()
 				+"\",\"usuario\":\""+usuario.getUsuario()
-				+"\",\"estado\":\""+usuario.getEstado()
+				+"\",\"password\":\""+usuario.getPassword()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -115,10 +117,10 @@ public class TestUsuariosJSON {
 		
 		String data = "{"
 				+ "\"cedula_usuario\":\""+ id
-				+"\",\"email_usuario\": \""+usuario.getEmail_usuario()
 				+"\",\"nombre_usuario\": \""+usuario.getNombre_usuario()
-				+"\",\"password\":\""+usuario.getPassword()
+				+"\",\"email_usuario\": \""+usuario.getEmail_usuario()
 				+"\",\"usuario\":\""+usuario.getUsuario()
+				+"\",\"password\":\""+usuario.getPassword()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -128,6 +130,7 @@ public class TestUsuariosJSON {
 		http.disconnect();
 		return respuesta;
 	}
+
 	
 	public static int deleteJSON(Long id) throws IOException {
 		
@@ -151,6 +154,11 @@ public class TestUsuariosJSON {
 		http.disconnect();
 		return respuesta;
 	}
-	
-	
+
+
+
+
+
+
+
 }

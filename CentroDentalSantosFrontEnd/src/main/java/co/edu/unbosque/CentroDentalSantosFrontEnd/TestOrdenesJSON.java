@@ -15,37 +15,37 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-
-public class TestOrdenesTrabajoJSON {
+public class TestOrdenesJSON {
 
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
 	
-	public static ArrayList<OrdenesTrabajo> parsingOrdenesTrabajo(String json) throws ParseException {
+
+
+	public static ArrayList<Ordenes> parsingOrdenes(String json) throws ParseException {
 		JSONParser jsonParser = new JSONParser();
-		ArrayList<OrdenesTrabajo> lista = new ArrayList<OrdenesTrabajo>();
-		JSONArray ordenesTrabajo = (JSONArray) jsonParser.parse(json);
-		Iterator i = ordenesTrabajo.iterator();
+		ArrayList<Ordenes> lista = new ArrayList<Ordenes>();
+		JSONArray ordenes = (JSONArray) jsonParser.parse(json);
+		Iterator i = ordenes.iterator();
 		
 		while (i.hasNext()) {
 		
 			JSONObject innerObj = (JSONObject) i.next();
-			OrdenesTrabajo ordenTrabajo= new OrdenesTrabajo();
-			ordenTrabajo.setNumero_orden(innerObj.get("numero_orden").toString());;
-			ordenTrabajo.setFecha_orden(innerObj.get("fecha_orden").toString());
-			ordenTrabajo.setCedula_paciente(innerObj.get("cedula_paciente").toString());
-			ordenTrabajo.setCedula_medico(innerObj.get("cedula_medico").toString());
-			ordenTrabajo.setClase_trabajo(innerObj.get("clase_trabajo").toString());
-			lista.add(ordenTrabajo);
+			Ordenes orden= new Ordenes();
+			orden.setNumero_orden(innerObj.get("numero_orden").toString());;
+			orden.setFecha_orden(innerObj.get("fecha_orden").toString());
+			orden.setCedula_paciente(innerObj.get("cedula_paciente").toString());
+			orden.setCedula_medico(innerObj.get("cedula_medico").toString());
+			orden.setClase_trabajo(innerObj.get("clase_trabajo").toString());
+			lista.add(orden);
 		}
 		return lista;
 	}
 
-
 	
-	public static ArrayList<OrdenesTrabajo> getJSON() throws IOException, ParseException{
+	public static ArrayList<Ordenes> getJSON() throws IOException, ParseException{
 		
-		url = new URL(sitio +"ordenesTrabajo/listar");
+		url = new URL(sitio +"ordenes/listar");
 		HttpURLConnection http = (HttpURLConnection)url.openConnection();
 		
 		http.setRequestMethod("GET");
@@ -59,17 +59,18 @@ public class TestOrdenesTrabajoJSON {
 		   json += (char)inp[i];
 		}
 		
-		ArrayList<OrdenesTrabajo> lista = new ArrayList<OrdenesTrabajo>();
-		lista = parsingOrdenesTrabajo(json);
+		ArrayList<Ordenes> lista = new ArrayList<Ordenes>();
+		lista = parsingOrdenes(json);
 		http.disconnect();
 		return lista;
 	}
 
 
-	public static int postJSON(OrdenesTrabajo ordenTrabajo) throws IOException {
+
+	public static int postJSON(Ordenes orden) throws IOException {
 		
 		
-		url = new URL(sitio+"ordenesTrabajo/guardar");
+		url = new URL(sitio+"Ordenes/guardar");
 		HttpURLConnection http;
 		http = (HttpURLConnection)url.openConnection();
 		
@@ -84,11 +85,11 @@ public class TestOrdenesTrabajoJSON {
 		http.setRequestProperty("Content-Type", "application/json");
 		
 		String data = "{"
-				+ "\"numero_orden\":\""+ ordenTrabajo.getNumero_orden()
-				+"\",\"fecha_orden\": \""+ordenTrabajo.getFecha_orden()
-				+"\",\"cedula_paciente\": \""+ordenTrabajo.getCedula_paciente()
-				+"\",\"cedula_medico\":\""+ordenTrabajo.getCedula_medico()
-				+"\",\"clase_trabajo\":\""+ordenTrabajo.getClase_trabajo()
+				+ "\"numero_orden\":\""+ orden.getNumero_orden()
+				+"\",\"fecha_orden\": \""+orden.getFecha_orden()
+				+"\",\"cedula_paciente\": \""+orden.getCedula_paciente()
+				+"\",\"cedula_medico\":\""+orden.getCedula_medico()
+				+"\",\"clase_trabajo\":\""+orden.getClase_trabajo()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -100,11 +101,10 @@ public class TestOrdenesTrabajoJSON {
 	}
 
 
-
-	public static int putJSON(OrdenesTrabajo ordenTrabajo, Long id) throws IOException {
+	public static int putJSON(Ordenes orden, Long id) throws IOException {
 		
 		
-		url = new URL(sitio+"ordenesTrabajo/actualizar");
+		url = new URL(sitio+"ordenes/actualizar");
 		HttpURLConnection http;
 		http = (HttpURLConnection)url.openConnection();
 		
@@ -120,10 +120,10 @@ public class TestOrdenesTrabajoJSON {
 		
 		String data = "{"
 				+ "\"numero_orden\":\""+ id
-				+"\",\"fecha_orden\": \""+ordenTrabajo.getFecha_orden()
-				+"\",\"cedula_paciente\": \""+ordenTrabajo.getCedula_paciente()
-				+"\",\"cedula_medico\":\""+ordenTrabajo.getCedula_medico()
-				+"\",\"clase_trabajo\":\""+ordenTrabajo.getClase_trabajo()
+				+"\",\"fecha_orden\": \""+orden.getFecha_orden()
+				+"\",\"cedula_paciente\": \""+orden.getCedula_paciente()
+				+"\",\"cedula_medico\":\""+orden.getCedula_medico()
+				+"\",\"clase_trabajo\":\""+orden.getClase_trabajo()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -133,13 +133,12 @@ public class TestOrdenesTrabajoJSON {
 		http.disconnect();
 		return respuesta;
 	}
-
 	
 	
 	public static int deleteJSON(Long id) throws IOException {
 		
 		
-		url = new URL(sitio+"ordenesTrabajo/eliminar/" + id);
+		url = new URL(sitio+"ordenes/eliminar/" + id);
 		HttpURLConnection http;
 		http = (HttpURLConnection)url.openConnection();
 		
@@ -158,15 +157,6 @@ public class TestOrdenesTrabajoJSON {
 		http.disconnect();
 		return respuesta;
 	}
-
-
-
-
-
-
-
-
-
 
 
 }

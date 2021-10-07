@@ -12,44 +12,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.edu.unbosque.CentroDentalSantosBackEnd.dao.OrdenesTrabajoDAO;
-import co.edu.unbosque.CentroDentalSantosBackEnd.model.OrdenesTrabajo;
+import co.edu.unbosque.CentroDentalSantosBackEnd.dao.OrdenesDAO;
+import co.edu.unbosque.CentroDentalSantosBackEnd.model.Ordenes;
 
 
 @RestController
-@RequestMapping("usuarios")
-public class OrdenesTrabajoAPI {
+@RequestMapping("ordenes")
+public class OrdenesAPI {
+
 
 
 	@Autowired
-	private OrdenesTrabajoDAO ordenesTrabajoDAO;
+	private OrdenesDAO ordenesDAO;
 	
 	@PostMapping("/guardar")
-	public void guardar(@RequestBody OrdenesTrabajo ordenesTrabajo) {
-		ordenesTrabajoDAO.save(ordenesTrabajo);
+	public void guardar(@RequestBody Ordenes ordenes) {
+		ordenesDAO.save(ordenes);
 	}
 	
 	@GetMapping("/listar")
-	public List<OrdenesTrabajo> listar(){
-		return ordenesTrabajoDAO.findAll();
+	public List<Ordenes> listar(){
+		return ordenesDAO.findAll();
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
 	public void eliminar(@PathVariable("id")Long id) {
-		ordenesTrabajoDAO.deleteById(id);
+		ordenesDAO.deleteById(id);
 	}
 	
 	@PutMapping("/actualizar")
-	public void actualizar(@RequestBody OrdenesTrabajo ordenesTrabajo) {
-		ordenesTrabajoDAO.save(ordenesTrabajo);
+	public void actualizar(@RequestBody Ordenes ordenes) {
+		ordenesDAO.save(ordenes);
 	}
 	
 	@GetMapping("/buscarId/{id}")
-	public List<OrdenesTrabajo> listarId(@PathVariable("id")Long id){
-		return ordenesTrabajoDAO.findAll();
+	public List<Ordenes> listarId(@PathVariable("id")Long id){
+		return ordenesDAO.findAll();
 	}
-	
-
-
 
 }

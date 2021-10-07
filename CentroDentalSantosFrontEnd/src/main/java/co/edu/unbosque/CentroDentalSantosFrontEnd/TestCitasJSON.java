@@ -36,7 +36,7 @@ public class TestCitasJSON {
 			cita.setHora_cita(innerObj.get("hora_cita").toString());
 			cita.setCedula_paciente(innerObj.get("cedula_paciente").toString());
 			cita.setCedula_medico(innerObj.get("cedula_medico").toString());
-			cita.setEstado_cita(innerObj.get("estado").toString());
+			cita.setEstado_cita(innerObj.get("estado_cita").toString());
 			cita.setObservaciones(innerObj.get("observaciones").toString());
 			lista.add(cita);
 		}
@@ -92,7 +92,7 @@ public class TestCitasJSON {
 				+"\",\"hora_cita\": \""+cita.getHora_cita()
 				+"\",\"cedula_paciente\":\""+cita.getCedula_paciente()
 				+"\",\"cedula_medico\":\""+cita.getCedula_medico()
-				+"\",\"estado\":\""+cita.getEstado_cita()
+				+"\",\"estado_cita\":\""+cita.getEstado_cita()
 				+"\",\"observaciones\":\""+cita.getObservaciones()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
@@ -130,7 +130,7 @@ public class TestCitasJSON {
 				+"\",\"hora_cita\": \""+cita.getHora_cita()
 				+"\",\"cedula_paciente\":\""+cita.getCedula_paciente()
 				+"\",\"cedula_medico\":\""+cita.getCedula_medico()
-				+"\",\"estado\":\""+cita.getEstado_cita()
+				+"\",\"estado_cita\":\""+cita.getEstado_cita()
 				+"\",\"observaciones\":\""+cita.getObservaciones()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);

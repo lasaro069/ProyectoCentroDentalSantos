@@ -7,7 +7,6 @@ public class Usuarios {
 	private String email_usuario;
 	private String password;
 	private String usuario;
-	private Integer estado;
 
 	public String getCedula_usuario() {
 		return cedula_usuario;
@@ -38,12 +37,6 @@ public class Usuarios {
 	}
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
-	}
-	public Integer getEstado() {
-		return estado;
-	}
-	public void setEstado(Integer estado) {
-		this.estado = estado;
 	}
 	
 }

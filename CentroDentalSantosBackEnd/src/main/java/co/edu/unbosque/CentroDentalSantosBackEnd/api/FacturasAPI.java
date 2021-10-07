@@ -17,7 +17,7 @@ import co.edu.unbosque.CentroDentalSantosBackEnd.model.Facturas;
 
 
 @RestController
-@RequestMapping("usuarios")
+@RequestMapping("facturas")
 
 public class FacturasAPI {
 

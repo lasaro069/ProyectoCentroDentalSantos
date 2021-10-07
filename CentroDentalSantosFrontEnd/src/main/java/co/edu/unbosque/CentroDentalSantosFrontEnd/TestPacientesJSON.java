@@ -31,11 +31,11 @@ public class TestPacientesJSON {
 		
 			JSONObject innerObj = (JSONObject) i.next();
 			Pacientes paciente = new Pacientes();
-			paciente.setCedula_paciente(innerObj.get("idpac").toString());
-			paciente.setNombre_paciente(innerObj.get("nompac").toString());
-			paciente.setApellido_paciente(innerObj.get("apepac").toString());
-			paciente.setCelular_paciente(innerObj.get("celupac").toString());
-			paciente.setEmail_paciente(innerObj.get("correopac").toString());
+			paciente.setCedula_paciente(innerObj.get("cedula_paciente").toString());
+			paciente.setNombre_paciente(innerObj.get("nombre_paciente").toString());
+			paciente.setApellido_paciente(innerObj.get("apellido_paciente").toString());
+			paciente.setCelular_paciente(innerObj.get("celular_paciente").toString());
+			paciente.setEmail_paciente(innerObj.get("email_paciente").toString());
 			lista.add(paciente);
 		}
 		return lista;
@@ -83,11 +83,11 @@ public class TestPacientesJSON {
 		http.setRequestProperty("Content-Type", "application/json");
 		
 		String data = "{"
-				+ "\"idpac\":\""+ paciente.getCedula_paciente()
-				+"\",\"nompac\": \""+paciente.getNombre_paciente()
-				+"\",\"apepac\": \""+paciente.getApellido_paciente()
-				+"\",\"celupac\":\""+paciente.getCelular_paciente()
-				+"\",\"correopac\":\""+paciente.getEmail_paciente()
+				+ "\"cedula_paciente\":\""+ paciente.getCedula_paciente()
+				+"\",\"nombre_paciente\": \""+paciente.getNombre_paciente()
+				+"\",\"apellido_paciente\": \""+paciente.getApellido_paciente()
+				+"\",\"celular_paciente\":\""+paciente.getCelular_paciente()
+				+"\",\"email_paciente\":\""+paciente.getEmail_paciente()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -116,11 +116,11 @@ public class TestPacientesJSON {
 		http.setRequestProperty("Content-Type", "application/json");
 		
 		String data = "{"
-				+ "\"idpac\":\""+ id
-				+"\",\"nompac\": \""+paciente.getNombre_paciente()
-				+"\",\"apepac\": \""+paciente.getApellido_paciente()
-				+"\",\"celupac\":\""+paciente.getCelular_paciente()
-				+"\",\"correopac\":\""+paciente.getEmail_paciente()
+				+ "\"cedula_paciente\":\""+ id
+				+"\",\"nombre_paciente\": \""+paciente.getNombre_paciente()
+				+"\",\"apellido_paciente\": \""+paciente.getApellido_paciente()
+				+"\",\"celular_paciente\":\""+paciente.getCelular_paciente()
+				+"\",\"email_paciente\":\""+paciente.getEmail_paciente()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();

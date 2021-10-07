@@ -16,7 +16,7 @@ import co.edu.unbosque.CentroDentalSantosBackEnd.dao.CitasDAO;
 import co.edu.unbosque.CentroDentalSantosBackEnd.model.Citas;
 
 @RestController
-@RequestMapping("usuarios")
+@RequestMapping("citas")
 public class CitasAPI {
 
 	@Autowired

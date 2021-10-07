@@ -12,7 +12,6 @@ public class Usuarios {
 	private String email_usuario;
 	private String usuario;
 	private String password;
-	private Integer estado;
 	
 	public Long getCedula_usuario() {
 		return cedula_usuario;
@@ -43,12 +42,6 @@ public class Usuarios {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public Integer getEstado() {
-		return estado;
-	}
-	public void setEstado(Integer estado) {
-		this.estado = estado;
 	}
 
 }

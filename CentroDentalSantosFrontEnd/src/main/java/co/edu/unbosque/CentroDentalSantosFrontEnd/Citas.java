@@ -9,6 +9,7 @@ public class Citas {
 	private String cedula_medico;
 	private String estado_cita;
 	private String observaciones;
+	
 	public String getNumero_cita() {
 		return numero_cita;
 	}

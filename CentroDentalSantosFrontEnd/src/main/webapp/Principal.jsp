@@ -24,22 +24,16 @@
 			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Medicos&accion=Listar" target="myFrame">Médicos</a>
 			        </li>
 			        <li class="nav-item">
-			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Proveedores&accion=Listar" target="myFrame">Pacientes</a>
+			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Pacientes&accion=Listar" target="myFrame">Pacientes</a>
 			        </li>
 			        <li class="nav-item">
-			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Productos&accion=Listar" target="myFrame">Citas</a>
+			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Citas&accion=Listar" target="myFrame">Citas</a>
 			        </li>
 			        <li class="nav-item">
-			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Productos&accion=Listar" target="myFrame">Facturación</a>
+			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Ordenes&accion=Listar" target="myFrame">Ordenes de Trabajo</a>
 			        </li>
 			        <li class="nav-item">
-			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Productos&accion=Listar" target="myFrame">Ordenes de Trabajo</a>
-			        </li>
-			        <li class="nav-item">
-					<a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Ventas&accion=default&Usuario=${usuario.getCedula_usuario()}" target="myFrame">Ventas</a>
-					</li>
-			        <li class="nav-item">
-			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="./Reportes.jsp" target="myFrame">Reportes</a>
+			          <a style="margin-left:10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Facturas&accion=Listar" target="myFrame">Facturación</a>
 			        </li>
 			      </ul>
 				</div>  
