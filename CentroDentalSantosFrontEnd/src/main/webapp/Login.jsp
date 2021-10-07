@@ -11,7 +11,7 @@
 <body>
 
 	<div class="contenedor1">
-				<form class="form1" method="get" action="./ServletTiendaElBosque">
+				<form class="form1" method="get" action="./ServletCentroDentalSantos">
 					<div class="contenedor2 ">
 						<h1 align="center">Centro Dental Santos</h1>
 						<h2 align="center">Bienvenidos</h2>
