@@ -17,7 +17,7 @@ header{
 
 
 body{
-    background: url(../imagen/frutas3trans.jpg);
+    background: url(../imagen/img/dentalabtrans.jpg);
     background-size: cover;
     background-attachment: fixed;
     
@@ -27,7 +27,7 @@ body{
 .contenedor1{
 	width: 340px;    
     height: 420px;
-    background: #38A3A5;
+    background: url(../imagen/img/055_Sharp_Blues.png);
     font-family:sans-serif;
     color: #fff;
     top: 50%;

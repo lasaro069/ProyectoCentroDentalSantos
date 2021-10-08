@@ -5,8 +5,8 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/NuevoEstilo.css">
 <meta charset="ISO-8859-1">
-<link rel="icon" href="imagen/logoaguacate.ico">
-<title>Centro Dental Santos</title>
+<link rel="icon" href="imagen/ico/cd_santos.ico">
+<title>Login</title>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 					<div class="contenedor2 ">
 						<h1 align="center">Centro Dental Santos</h1>
 						<h2 align="center">Bienvenidos</h2>
-							<img src="imagen/logoaguacate.jpg" class="logo" width="40" 	alt="imagen">
+							<img src="imagen/img/LOGO CDS.png" class="logo" width="40" 	alt="imagen">
 							<label><h3 align="center">Login</h3></label>
 					</div>
 
